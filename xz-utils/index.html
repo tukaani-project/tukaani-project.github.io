@@ -1,9 +1,68 @@
-<h1>XZ Utils</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>XZ Utils</title>
+	<link rel="icon" href="/resources/logo.png" type="image/png">
+	<link rel="shortcut icon" href="/resources/logo.png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="/resources/style.css">
+</head>
+
+<body>
+	<div id="menubar">
+		<div id="menubar-container">
+			
+				<a href="/">Home</a>
+			
+
+			
+				<a class="active" href="/xz-utils/">XZ Utils</a>
+			
+
+			
+				<a href="/xz-for-java/">XZ for Java</a>
+			
+
+			
+				<a href="/xz-embedded/">XZ Embedded</a>
+			
+
+			
+				<a href="/format/">XZ File Format</a>
+			
+
+			
+				<a href="/contact.html">Contact</a>
+			
+
+			<img id="logo" alt="" src="/resources/logo.png">
+		</div>
+	</div>
+
+	<script>
+		var logo_small = false;
+		var logo = document.getElementById("logo");
+
+		logo.onclick = function () {
+			if (logo_small) {
+				logo.style.transform = "scale(100%, 100%)";
+			}
+			else {
+				logo.style.transform = "scale(100%, 30%)";
+			}
+			logo_small = !logo_small;
+		}
+	</script>
+
+	<div id="content">
+		<h1>XZ Utils</h1>
 <hr>
 <div class="tab">
 	<p>
 		XZ Utils is complete C99 implementation of the
-		<a href="{{ topdir }}/format/{{ index_suffix }}">.xz file format</a>.
+		<a href="/format/">.xz file format</a>.
 		XZ Utils were originally written for POSIX systems, but will also work
 		on others such as Windows, OS/2, and DOS.
 	</p>
@@ -35,11 +94,11 @@
 	<div class="tab">
 		<p>
 			Man page with a keyword index:
-			<a href="{{ topdir }}/xz-utils/man/xz.1.html">xz(1)</a>
+			<a href="/xz-utils/man/xz.1.html">xz(1)</a>
 		</p>
 		<p class="mb0">
 			Doxygen-generated
-			<a href="{{ topdir }}/xz-utils/liblzma-api/{{ index_suffix }}">liblzma API documentation</a>
+			<a href="/xz-utils/liblzma-api/">liblzma API documentation</a>
 			is also included in the source packages since XZ Utils 5.4.2.
 		</p>
 	</div>
@@ -50,9 +109,9 @@
 	<div class="tab">
 		<p>
 			Versions 5.2.12, 5.4.3 and later have been signed with
-			<a href="{{ topdir }}/keys/jia_tan_pubkey.txt">Jia Tan's OpenPGP key</a>.
+			<a href="/keys/jia_tan_pubkey.txt">Jia Tan's OpenPGP key</a>.
 			The older releases have been signed with
-			<a href="{{ topdir }}/keys/lasse_collin_pubkey.txt">Lasse Collin's OpenPGP key</a>.
+			<a href="/keys/lasse_collin_pubkey.txt">Lasse Collin's OpenPGP key</a>.
 		</p>
 		<p>
 			See the
@@ -64,36 +123,81 @@
 		<div class="dark-block">
 			<h3>Stable</h3>
 			<div class="tab">
-				{% assign xz_utils_release = xz_utils_releases.releases[0] %}
+				
 				<p class="mt0">
-					{{ xz_utils_release.name }} was released on 2023-11-01.
+					5.4.5 was released on 2023-11-01.
 				</p>
 
 				<table class="table-alternating">
-					{% for tarball in xz_utils_release.tarballs %}
+					
 					<tr>
 
 						<td>
-							{% if tarball.is_url_local %}
-							<a href="{{ topdir }}/{{ tarball.tarball_url }}">xz-{{
-								xz_utils_release.name }}.tar.{{ tarball.type }}</a>
-							{% else %}
-							<a href="{{ tarball.tarball_url }}">xz-{{ xz_utils_release.name
-								}}.tar.{{ tarball.type }}</a>
-							{% endif %}
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.gz">xz-5.4.5.tar.gz</a>
+							
 						</td>
 						<td>
-							({{ tarball.size }})
+							(2817 KiB)
 						</td>
 						<td>
-							{% if tarball.is_url_local %}
-							<a href="{{ topdir }}/{{ tarball.sig_url }}">signature</a>
-							{% else %}
-							<a href="{{ tarball.sig_url }}">signature</a>
-							{% endif %}
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.gz.sig">signature</a>
+							
 						</td>
 					</tr>
-					{% endfor %}
+					
+					<tr>
+
+						<td>
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.bz2">xz-5.4.5.tar.bz2</a>
+							
+						</td>
+						<td>
+							(2128 KiB)
+						</td>
+						<td>
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.bz2.sig">signature</a>
+							
+						</td>
+					</tr>
+					
+					<tr>
+
+						<td>
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.zst">xz-5.4.5.tar.zst</a>
+							
+						</td>
+						<td>
+							(1701 KiB)
+						</td>
+						<td>
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.zst.sig">signature</a>
+							
+						</td>
+					</tr>
+					
+					<tr>
+
+						<td>
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.xz">xz-5.4.5.tar.xz</a>
+							
+						</td>
+						<td>
+							(1642 KiB)
+						</td>
+						<td>
+							
+							<a href="https://github.com/tukaani-project/xz/releases/download/v5.4.5/xz-5.4.5.tar.xz.sig">signature</a>
+							
+						</td>
+					</tr>
+					
 				</table>
 
 				<p class="mb0">
@@ -127,7 +231,7 @@
 
 			<p class="tab m0">
 				Source and binary packages of
-				<a href="{{ topdir }}/xz-utils/old-releases.html">old XZ Utils releases</a>
+				<a href="/xz-utils/old-releases.html">old XZ Utils releases</a>
 				are available for the stable releases.
 			</p>
 		</div>
@@ -343,23 +447,38 @@
 				</p>
 
 				<table class="table-alternating">
-					{% assign windows_release = xz_utils_windows_releases.releases[0] %}
-					{% for archive in windows_release.archives %}
+					
+					
 					<tr>
 
 						<td>
-							<a href="{{ topdir }}/{{ archive.archive_url }}">
-								xz-{{ windows_release.name }}.{{ archive.type }}
+							<a href="/xz-utils/files/xz-5.2.9-windows.zip">
+								xz-5.2.9.zip
 							</a>
 						</td>
 						<td>
-							({{ archive.size }})
+							(1473 KiB)
 						</td>
 						<td>
-							<a href="{{ topdir }}/{{ archive.sig_url }}">signature</a>
+							<a href="/xz-utils/files/xz-5.2.9-windows.zip.sig">signature</a>
 						</td>
 					</tr>
-					{% endfor %}
+					
+					<tr>
+
+						<td>
+							<a href="/xz-utils/files/xz-5.2.9-windows.7z">
+								xz-5.2.9.7z
+							</a>
+						</td>
+						<td>
+							(708 KiB)
+						</td>
+						<td>
+							<a href="/xz-utils/files/xz-5.2.9-windows.7z.sig">signature</a>
+						</td>
+					</tr>
+					
 				</table>
 			</div>
 		</div>
@@ -389,16 +508,14 @@
 					<tt class="file">dos/README.txt</tt> in the source package for details.
 				</p>
 
-				{% assign dos_release = xz_utils_dos_releases.releases[0] %}
-				{% for archive in dos_release.archives %}
+				
+				
 				<p>
-					<a href="{{ topdir }}/{{ archive.archive_url }}">xz-{{ dos_release.name }}.{{
-						archive.type
-						}}</a>
-					({{ archive.size }})
-					<a href="{{ topdir }}/{{ archive.sig_url }}">signature</a>
+					<a href="/xz-utils/files/xz-5.4.0-dos.zip">xz-5.4.0.zip</a>
+					(277 KiB)
+					<a href="/xz-utils/files/xz-5.4.0-dos.zip.sig">signature</a>
 				</p>
-				{% endfor %}
+				
 
 				<p>
 					The package includes some copylefted code from
@@ -410,17 +527,17 @@
 
 				<table class="table-alternating">
 					<tr>
-						<td><a href="{{ topdir }}/xz-utils/files/djlsr205.zip">djlsr205.zip</a>
+						<td><a href="/xz-utils/files/djlsr205.zip">djlsr205.zip</a>
 						</td>
 						<td>(1880 KiB)</td>
 					</tr>
 					<tr>
-						<td><a href="{{ topdir }}/xz-utils/files/djtst205.zip">djtst205.zip</a>
+						<td><a href="/xz-utils/files/djtst205.zip">djtst205.zip</a>
 						</td>
 						<td>(963 KiB)</td>
 					</tr>
 					<tr>
-						<td><a href="{{ topdir }}/xz-utils/files/csdpmi7s.zip">csdpmi7s.zip</a>
+						<td><a href="/xz-utils/files/csdpmi7s.zip">csdpmi7s.zip</a>
 						</td>
 						<td>(88 KiB)</td>
 					</tr>
@@ -514,3 +631,8 @@
 		</p>
 	</div>
 </div>
+
+	</div>
+</body>
+
+</html>
