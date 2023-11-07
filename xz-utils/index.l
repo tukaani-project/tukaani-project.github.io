@@ -1,0 +1,516 @@
+<h1>XZ Utils</h1>
+<hr>
+<div class="tab">
+	<p>
+		XZ Utils is complete C99 implementation of the
+		<a href="{{ topdir }}/format/{{ index_suffix }}">.xz file format</a>.
+		XZ Utils were originally written for POSIX systems, but will also work
+		on others such as Windows, OS/2, and DOS.
+	</p>
+
+	<p>
+		The core of the XZ Utils compression code is based on
+		<a href="https://7-zip.org/sdk.html">LZMA SDK</a>, but it has been modified
+		significantly over the years to be suitable for XZ Utils.
+	</p>
+
+	<p>
+		XZ Utils consist of several components:
+	</p>
+	<ul>
+		<li><b>liblzma</b> is a compression library with an API similar to that
+			of zlib.</li>
+		<li><b>xz</b> is a command line tool with syntax similar to that
+			of gzip.</li>
+		<li><b>xzdec</b> is a decompression-only tool smaller than
+			the full-featured xz tool.</li>
+		<li>A set of shell scripts (<b>xzgrep</b>, <b>xzdiff</b>, etc.) have been adapted
+			from gzip to ease viewing, grepping, and comparing compressed
+			files.</li>
+	</ul>
+</div>
+
+<div class="dark-block">
+	<h2>Documentation</h2>
+	<div class="tab">
+		<p>
+			Man page with a keyword index:
+			<a href="{{ topdir }}/xz-utils/man/xz.1.html">xz(1)</a>
+		</p>
+		<p class="mb0">
+			Doxygen-generated
+			<a href="{{ topdir }}/xz-utils/liblzma-api/{{ index_suffix }}">liblzma API documentation</a>
+			is also included in the source packages since XZ Utils 5.4.2.
+		</p>
+	</div>
+</div>
+
+<div class="border-block">
+	<h2>Releases</h2>
+	<div class="tab">
+		<p>
+			Versions 5.2.12, 5.4.3 and later have been signed with
+			<a href="{{ topdir }}/keys/jia_tan_pubkey.txt">Jia Tan's OpenPGP key</a>.
+			The older releases have been signed with
+			<a href="{{ topdir }}/keys/lasse_collin_pubkey.txt">Lasse Collin's OpenPGP key</a>.
+		</p>
+		<p>
+			See the
+			<a href="https://git.tukaani.org/?p=xz.git;a=blob;f=NEWS;hb=HEAD">NEWS</a>
+			file for a summary of changes between versions.
+			A more detailed Changelog is provided in the source code releases.
+		</p>
+
+		<div class="dark-block">
+			<h3>Stable</h3>
+			<div class="tab">
+				{% assign xz_utils_release = xz_utils_releases.releases[0] %}
+				<p class="mt0">
+					{{ xz_utils_release.name }} was released on 2023-11-01.
+				</p>
+
+				<table class="table-alternating">
+					{% for tarball in xz_utils_release.tarballs %}
+					<tr>
+
+						<td>
+							{% if tarball.is_url_local %}
+							<a href="{{ topdir }}/{{ tarball.tarball_url }}">xz-{{
+								xz_utils_release.name }}.tar.{{ tarball.type }}</a>
+							{% else %}
+							<a href="{{ tarball.tarball_url }}">xz-{{ xz_utils_release.name
+								}}.tar.{{ tarball.type }}</a>
+							{% endif %}
+						</td>
+						<td>
+							({{ tarball.size }})
+						</td>
+						<td>
+							{% if tarball.is_url_local %}
+							<a href="{{ topdir }}/{{ tarball.sig_url }}">signature</a>
+							{% else %}
+							<a href="{{ tarball.sig_url }}">signature</a>
+							{% endif %}
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+
+				<p class="mb0">
+					All releases since 5.2.10 and 5.4.0 are hosted on
+					<a href="https://github.com/tukaani-project/xz/releases">GitHub</a>.
+					Older release files are also available in the
+					<a href="https://sourceforge.net/projects/lzmautils/files/">XZ Utils files
+						section on
+						Sourceforge</a>.
+				</p>
+			</div>
+		</div>
+
+		<div class="border-block">
+			<h3>Unstable</h3>
+			<div class="tab m0">
+				<p class="mt0">
+					The odd numbered minor releases are development releases and should
+					be considered unstable. Incompatible changes to unstable features may be
+					done before they are included in a stable release.
+				</p>
+
+				<p class="mb0">
+					There currently are no unstable releases in this cycle.
+				</p>
+			</div>
+		</div>
+
+		<div class="dark-block mb0">
+			<h3>Old Versions</h3>
+
+			<p class="tab m0">
+				Source and binary packages of
+				<a href="{{ topdir }}/xz-utils/old-releases.html">old XZ Utils releases</a>
+				are available for the stable releases.
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="dark-block">
+	<h2>Security Issues</h2>
+	<br>
+	<div class="tab">
+
+		<h3>xzgrep CVE-2022-1271, ZDI-CAN-16587</h3>
+		<div class="tab">
+
+			<p>
+				A patch to fix a security vulnerability in xzgrep
+				(CVE-2022-1271, ZDI-CAN-16587) was made public on 2022-04-07.
+				The patch applies to <b>4.999.9beta</b>, <b>5.2.5</b>, <b>5.3.1alpha</b>,
+				and <b>5.3.2alpha</b>. Newer XZ Utils releases include an improved fix
+				for the problem.
+			</p>
+			<p>
+				It is a severe issue if an attacker can control the filenames
+				that are given on the <b>xzgrep</b> command line.
+				The vulnerability was discovered by
+				<b>cleemy desu wayo</b> working with Trend Micro Zero Day Initiative.
+				For more information,
+				see the detailed description in the patch file linked below.
+			</p>
+			<p class="mb0">
+				<a href="xzgrep-ZDI-CAN-16587.patch">xzgrep-ZDI-CAN-16587.patch</a>
+				<br><a href="xzgrep-ZDI-CAN-16587.patch.sig">xzgrep-ZDI-CAN-16587.patch.sig</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="border-block">
+	<h2>Development</h2>
+	<div class="tab">
+		<p>
+			The project's main repository is on
+			<a href="https://github.com/tukaani-project/xz">GitHub</a>
+			and is mirrored (with some delay) to
+			<a href="https://git.tukaani.org/?p=xz.git">Tukaani</a>.
+		</p>
+
+		<p>
+			Check out the current source code:
+		</p>
+
+		<div class="code">git clone https://github.com/tukaani-project/xz</div>
+		<br>
+
+		<h3>Building</h3>
+		<hr>
+		<div class="tab">
+			<p>
+				XZ Utils should primarily be built using GNU Autotools.
+				CMake is also supported for liblzma, but it has limited support for
+				xz, xzdec, and the scripts, among other various features. The planned
+				5.6.0 release will expand the CMake support including being able to build
+				xz and xzdec with MSVC on Windows for the first time!
+			</p>
+
+			<div class="dark-block">
+				<p class="mt0">
+					For GNU Autotools, the minimum versions required are:
+				<ul>
+					<li>Autoconf 2.69</li>
+					<li>Automake 1.12</li>
+					<li>gettext 0.19.6 (Note: autopoint depends on cvs!)</li>
+					<li>Libtool 2.4</li>
+				</ul>
+
+
+				<p class="border-block">
+					<b>Note:</b> It is strongly recommended to build using the latest versions.
+				</p>
+
+				<p>
+					The following are optional dependencies. The autogen.sh script will fail
+					if they are missing but autogen.sh takes command line arguments to disable
+					these dependencies.
+				</p>
+				<ul>
+					<li><a href="https://po4a.org/">po4a</a>
+						is needed for translated documentation (man pages).
+						To build without po4a, use --no-po4a with autogen.sh.</li>
+					<li><a href="https://www.doxygen.nl/">Doxygen</a>
+						is needed to generate liblzma API documentation.
+						To build without Doxygen, use --no-doxygen with autogen.sh.</li>
+				</ul>
+
+				<p class="mb0">
+					For the CMake build, version 3.13 or greater is required.
+				</p>
+			</div>
+
+			<div class="border-block mb0">
+				<h3>Branches:</h3>
+				<ul>
+					<li><b>master</b>: the latest development code</li>
+					<li><b>v5.4</b>: fixes for the next 5.4.x release</li>
+					<li><b>v5.2</b>: fixes for the next 5.2.x release</li>
+					<li><b>v5.0</b>: fixes for the next 5.0.x release (unmaintained)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="dark-block">
+	<h2>Bindings</h2>
+
+	<div class="dark-block">
+		<h3>Python</h3>
+		<div class="tab">
+			<p class="mt0">
+				Python 3.3 includes
+				<a href="https://docs.python.org/3/library/lzma">bindings for liblzma</a>.
+				A backport of these bindings are available for Python 2 in the
+				<a href="https://pypi.python.org/pypi/backports.lzma">backports.lzma</a>
+				package.
+			</p>
+			<p>
+				<a href="https://pypi.python.org/pypi/lzmaffi">lzmaffi</a> is
+				another Python binding which adds random-access decompression support.
+			</p>
+			<p class="mb0">
+				The original Python 2 binding for liblzma is
+				<a href="https://pypi.python.org/pypi/pyliblzma">PylibLZMA</a>.
+			</p>
+		</div>
+	</div>
+
+	<div class="border-block">
+		<h3>Perl</h3>
+		<div class="tab">
+			<p class="m0">
+				Perl bindings for liblzma:
+				<a href="https://search.cpan.org/~pmqs/IO-Compress-Lzma/">IO-Compress-Lzma</a>
+				and
+				<a href="https://search.cpan.org/~pmqs/Compress-Raw-Lzma/">Compress-Raw-Lzma</a>.
+			</p>
+
+		</div>
+	</div>
+
+	<div class="dark-block">
+		<h3>Haskell</h3>
+		<div class="tab">
+			<p class="m0">
+				<a href="https://hackage.haskell.org/package/lzma">Haskell bindings</a>.
+			</p>
+		</div>
+	</div>
+
+	<div class="border-block">
+		<h3>Delphi and Free Pascal</h3>
+		<div class="tab">
+			<p class="m0">
+				Bindings and example programs for Delphi and Free Pascal are available
+				<a href="https://github.com/delphiunderground/xz-examples-delphi">here</a>.
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="border-block">
+	<h2>Pre-built binaries</h2>
+	<div class="tab">
+		<p>
+			Many free software operating systems already provide easy-to-install
+			XZ Utils binaries.
+			It doesn't make sense to provide links to all those here.
+			Instead, binaries or links to websites providing binaries are listed here
+			only for operating systems that don't have well-known repositories where
+			users would get software like this.
+		</p>
+		<p>
+			If you have a website that provides up-to-date XZ Utils binaries for
+			an operating system that meets the the criteria above, let me know
+			and I will include a link here. Note that I won't host the binaries
+			themselves without a good reason.
+		</p>
+
+		<div class="dark-block">
+			<h3>Windows</h3>
+			<hr>
+			<div class="tab">
+				<p>
+					The Windows version of XZ Utils includes binaries for 32-bit and 64-bit x86.
+					The binaries only depend on msvcrt.dll, which is available
+					on Windows 98 and later out of the box.
+				</p>
+				<ul>
+					<li>Command line tools: xz, xzdec, lzmadec, lzmainfo</li>
+					<li>Shared (DLL) and static liblzma, required C header files,
+						and liblzma.def to create import libraries for non-GNU toolchains
+						(no import library is needed with GNU toolchain)</li>
+					<li>Documentation is in plain text (UTF-8) format. The man pages
+						of the command line tools are included also as PDF.</li>
+				</ul>
+				<p>
+					5.2.10, 5.2.11, or 5.2.12 do not have anything significant for Windows
+					so only 5.2.9 is here.
+					5.4.x builds are not provided for now.
+				</p>
+
+				<table class="table-alternating">
+					{% assign windows_release = xz_utils_windows_releases.releases[0] %}
+					{% for archive in windows_release.archives %}
+					<tr>
+
+						<td>
+							<a href="{{ topdir }}/{{ archive.archive_url }}">
+								xz-{{ windows_release.name }}.{{ archive.type }}
+							</a>
+						</td>
+						<td>
+							({{ archive.size }})
+						</td>
+						<td>
+							<a href="{{ topdir }}/{{ archive.sig_url }}">signature</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+
+		<div class="border-block mb0">
+			<h3>DOS</h3>
+			<hr>
+			<div class="tab">
+				<p>
+					The DOS version of XZ Utils includes only the xz command line tool
+					and some documentation.
+					The xz tool should work e.g. on FreeDOS (also in DOSEMU), MS-DOS,
+					and Windows 95/98/98SE/ME.
+					This doesn't necessarily work in DOSBox at all,
+					and at least some problems are expected under Windows XP Command Prompt
+					(signal handling doesn't work).
+				</p>
+				<p>
+					Since the DOS version is naturally going to get very little testing,
+					it is recommended to use the Windows version instead of the DOS version
+					if you need xz under Windows 98 or later.
+					It is likely that that the DOS version will be updated only occasionally.
+				</p>
+				<p>
+					5.2.0 and later have experimental support for 8.3 filenames.
+					See <tt class="file">xz-dos.txt</tt> in the binary package or
+					<tt class="file">dos/README.txt</tt> in the source package for details.
+				</p>
+
+				{% assign dos_release = xz_utils_dos_releases.releases[0] %}
+				{% for archive in dos_release.archives %}
+				<p>
+					<a href="{{ topdir }}/{{ archive.archive_url }}">xz-{{ dos_release.name }}.{{
+						archive.type
+						}}</a>
+					({{ archive.size }})
+					<a href="{{ topdir }}/{{ archive.sig_url }}">signature</a>
+				</p>
+				{% endfor %}
+
+				<p>
+					The package includes some copylefted code from
+					<a href="https://www.delorie.com/djgpp/">DJGPP</a> and
+					<a href="https://sandmann.dotster.com/cwsdpmi/">CWSDPMI</a>.
+					The relevant source code is available from their home pages,
+					and copies are also available below.
+				</p>
+
+				<table class="table-alternating">
+					<tr>
+						<td><a href="{{ topdir }}/xz-utils/files/djlsr205.zip">djlsr205.zip</a>
+						</td>
+						<td>(1880 KiB)</td>
+					</tr>
+					<tr>
+						<td><a href="{{ topdir }}/xz-utils/files/djtst205.zip">djtst205.zip</a>
+						</td>
+						<td>(963 KiB)</td>
+					</tr>
+					<tr>
+						<td><a href="{{ topdir }}/xz-utils/files/csdpmi7s.zip">csdpmi7s.zip</a>
+						</td>
+						<td>(88 KiB)</td>
+					</tr>
+				</table>
+
+				<p class="mb0">
+					Juan Manuel Guerrero has made a more complete port of XZ Utils to DOS.
+					It also has support for short file names (8.3), but the naming
+					method is different from the one found in 5.2.0 and later.
+					It is available from
+					<a href="https://www.delorie.com/djgpp/getting.html">DJGPP mirrors</a>
+					under /current/v2apps (e.g. xz-500b.zip for 5.0.0 binaries).
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="dark-block">
+	<h2>Supported platforms</h2>
+	<div class="tab">
+		<p>
+			Below is an incomplete and somewhat vague (version numbers mostly missing)
+			list of operating systems on which XZ Utils should work.
+			The compiler(s) or toolchains are mentioned in parenthesis.
+			GCC refers to GCC 3 or later.
+			If you have additions or corrections, please email them to me.
+		</p>
+		<ul>
+			<li>GNU/Linux (GCC, Clang, ICC, IBM XL C)</li>
+			<li>GNU/HURD (GCC)</li>
+			<li>DragonflyBSD (GCC)</li>
+			<li>FreeBSD (GCC, Clang)</li>
+			<li>MirBSD (GCC)</li>
+			<li>NetBSD (GCC)</li>
+			<li>OpenBSD (Clang, GCC)</li>
+			<li>MINIX 3 (GCC) [1]</li>
+			<li>Haiku (GCC4)</li>
+			<li>Mac OS X (GCC)</li>
+			<li>Solaris 8, 9, 10, 11 (GCC, Sun Studio) [3]</li>
+			<li>Solaris 2.6, 7 (GCC)</li>
+			<li>HP-UX (GCC, HP ANSI C) [2]</li>
+			<li>Tru64 (GCC, Compaq C compiler) [1]</li>
+			<li>IRIX (MIPSpro) [1]</li>
+			<li>AIX (GCC, IBM XL C)</li>
+			<li>z/OS (IBM XL C)</li>
+			<li>QNX (compilers?)</li>
+			<li>OpenVMS (HP C compiler) [1]</li>
+			<li>OpenVOS 17 (GCC)</li>
+			<li>SCO OpenServer 5.0.7 (GCC 3.4.6, 4.2.4) [4]</li>
+			<li>Windows 95 and later (GCC/MinGW, GCC/MinGW-w64,
+				GCC/Cygwin, GCC/Interix,
+				Visual Studio (VS can only build liblzma)) [1]</li>
+			<li>OS/2, eComStation (GCC)</li>
+			<li>DOS e.g. FreeDOS and MS-DOS (GCC/DJGPP) [1]</li>
+		</ul>
+		<p>
+			[1] See also the platform-specific notes in the INSTALL file.
+		</p>
+		<p>
+			[2] 2010-09-22: HP ANSI C compiler crashes when compiling XZ Utils
+			on PA-RISC. On Itanium there are no problems.
+		</p>
+		<p>
+			[3] On Solaris 8 and 9 one may need to pass
+			ac_cv_prog_cc_c99= to configure if using Sun Studio.
+		</p>
+		<p class="mb0">
+			[4] Use --disable-threads when running configure.
+		</p>
+	</div>
+</div>
+
+<div class="border-block">
+	<h2>Licensing</h2>
+	<div class="tab">
+		<p>
+			The most interesting parts of XZ Utils (e.g. liblzma) are in the
+			public domain. You can do whatever you want with the public domain parts.
+		</p>
+		<p>
+			Some parts of XZ Utils (e.g. build system and some utilities) are under
+			different free software licenses such as GNU LGPLv2.1, GNU GPLv2,
+			or GNU GPLv3.
+		</p>
+		<p class="mb0">
+			See the file
+			<a href="https://git.tukaani.org/?p=xz.git;a=blob;f=COPYING">COPYING</a>
+			for more details.
+		</p>
+	</div>
+</div>

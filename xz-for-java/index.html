@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<title>XZ Utils</title>
+	<link rel="icon" href="/resources/logo.png" type="image/png">
+	<link rel="shortcut icon" href="/resources/logo.png" type="image/png">
+	<link rel="stylesheet" type="text/css" href="/resources/style.css">
+</head>
+
+<body>
+	<div id="menubar">
+		<div id="menubar-container">
+			
+				<a href="/">Home</a>
+			
+
+			
+				<a href="/xz-utils/">XZ Utils</a>
+			
+
+			
+				<a class="active" href="/xz-for-java/">XZ for Java</a>
+			
+
+			
+				<a href="/xz-embedded/">XZ Embedded</a>
+			
+
+			
+				<a href="/format/">XZ File Format</a>
+			
+
+			
+				<a href="/contact.html">Contact</a>
+			
+
+			<img id="logo" alt="" src="/resources/logo.png">
+		</div>
+	</div>
+
+	<script>
+		var logo_small = false;
+		var logo = document.getElementById("logo");
+
+		logo.onclick = function () {
+			if (logo_small) {
+				logo.style.transform = "scale(100%, 100%)";
+			}
+			else {
+				logo.style.transform = "scale(100%, 30%)";
+			}
+			logo_small = !logo_small;
+		}
+	</script>
+
+	<div id="content">
+		<h1>XZ for Java</h1>
+<hr>
+
+<div class="tab">
+	<p>
+		XZ for Java aims to be a complete implementation of XZ data compression
+		in pure Java.
+	</p>
+
+	<p>
+		The project's main repository is on
+		<a href="https://github.com/tukaani-project/xz-java">GitHub</a>
+		and is mirrored (with some delay) to
+		<a href="https://git.tukaani.org/?p=xz-java.git">Tukaani</a>.
+	</p>
+
+	<p>
+		Check out the current source code:
+	</p>
+
+	<div class="code">git clone https://github.com/tukaani-project/xz-java</div>
+</div>
+
+<div class="dark-block">
+	<h2>Features</h2>
+	<div class="tab">
+		<p>
+			XZ for Java supports single-threaded streamed compression and decompression
+			and random access decompression. Threading is planned but has not been implemented.
+		</p>
+		<ul>
+			<li>
+				Single-threaded streamed compression and decompression.
+			</li>
+			<li>
+				Random access decompression.
+			</li>
+			<li>
+				Delta, BCJ (x86, PowerPC, ARM, ARM-Thumb, IA-64, SPARC),
+				and LZMA2 filters. The ARM64 filter is complete, but is not part
+				of an official release yet.
+			</li>
+			<li>
+				All checksum types from the
+				<a href="format">xz-file-format</a>
+				(CRC32, CRC64, SHA256).
+			</li>
+		</ul>
+		<p class="mb0">
+			Threading is planned but has not been implemented.
+		</p>
+	</div>
+</div>
+
+<div class="border-block">
+	<h2>Documentation</h2>
+	<div class="tab">
+		<p class="m0">
+			The
+			<a href="/xz-for-java/xz-javadoc/">API documentation</a>
+			was generated from the latest release with javadoc.
+		</p>
+	</div>
+</div>
+
+<div class="dark-block">
+	<h2>Releases</h2>
+	<hr>
+	<div class="tab">
+
+		<h3>Source Code</h3>
+		<div class="tab">
+			<p style="margin-top:.25em">
+				Version 1.9 was released on 2021-03-12. See the
+				<a href="https://git.tukaani.org/?p=xz-java.git;a=blob;f=NEWS;hb=HEAD">NEWS</a>
+				file for a summary of changes between versions.
+			</p>
+
+			<p>
+				<a href="/xz-for-java/xz-java-1.9.zip">xz-java-1.9.zip</a> (153 KiB)
+				<a href="/xz-for-java/xz-java-1.9.zip.sig">signature</a>
+			</p>
+
+			<br>
+		</div>
+		<h3>Binaries</h3>
+		<div class="tab">
+			<p style="margin-top:.25em">
+				Starting from the version 1.0, XZ for Java is available in
+				<a href="https://mvnrepository.com/artifact/org.tukaani/xz/1.9"> Maven Central</a>:
+			</p>
+
+			<p class="mb0">
+				groupId&nbsp;=&nbsp;org.tukaani, artifactId&nbsp;=&nbsp;xz.
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="border-block">
+	<h2>Licensing</h2>
+	<p class="mb0 tab">
+		XZ for Java has been put into the public domain,
+		thus you can do whatever you want with it.
+		All the files in the package have been written by Lasse Collin,
+		Igor Pavlov, Brett Okken and/or Jia Tan.
+	</p>
+</div>
+
+	</div>
+</body>
+
+</html>
