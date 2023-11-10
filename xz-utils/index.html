@@ -38,7 +38,27 @@
 			
 		</div>
 
-		<table id="table-menubar" class="menubar-container2">
+		<table id="table-menubar">
+		</table>
+
+		<img id="logo" alt="" src="/resources/logo.png">
+	</div>
+
+	<script>
+		var logo_small = false;
+		var logo = document.getElementById("logo");
+
+		logo.onclick = function () {
+			if (logo_small) {
+				logo.style.transform = "scale(100%, 100%)";
+			}
+			else {
+				logo.style.transform = "scale(100%, 30%)";
+			}
+			logo_small = !logo_small;
+		}
+
+		const table_menubar_contents = `
 			<tr>
 				<td>
 				
@@ -78,38 +98,24 @@
 				
 				</td>
 			</tr>
-		</table>
+		`;
 
-		<img id="logo" alt="" src="/resources/logo.png">
-	</div>
-
-	<script>
-		var logo_small = false;
-		var logo = document.getElementById("logo");
-
-		logo.onclick = function () {
-			if (logo_small) {
-				logo.style.transform = "scale(100%, 100%)";
-			}
-			else {
-				logo.style.transform = "scale(100%, 30%)";
-			}
-			logo_small = !logo_small;
-		}
+		const table_menubar = document.getElementById("table-menubar");
+		table_menubar.innerHTML = table_menubar_contents;
 	</script>
 
 	<div id="content">
 		<h1>XZ Utils</h1>
 <hr>
 <div id="nav-anchor" style="position: unset">
-	<a href="#documentation">Documentation</a>
-	<a href="#releases">Releases</a>
-	<a href="#security">Security Issues</a>
-	<a href="#development">Development</a>
-	<a href="#bindings">Bindings</a>
-	<a href="#binaries">Pre-built binaries</a>
-	<a href="#platforms">Platforms</a>
-	<a href="#licensing">Licensing</a>
+	<a class="nav-anchor-link" href="#documentation">Documentation</a>
+	<a class="nav-anchor-link" href="#releases">Releases</a>
+	<a class="nav-anchor-link" href="#security">Security Issues</a>
+	<a class="nav-anchor-link" href="#development">Development</a>
+	<a class="nav-anchor-link" href="#bindings">Bindings</a>
+	<a class="nav-anchor-link" href="#binaries">Pre-built binaries</a>
+	<a class="nav-anchor-link" href="#platforms">Platforms</a>
+	<a class="nav-anchor-link" href="#licensing">Licensing</a>
 </div>
 <div class="tab">
 	<p>

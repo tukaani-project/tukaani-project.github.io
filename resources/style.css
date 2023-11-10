@@ -74,7 +74,7 @@ body {
 }
 
 
-#nav-anchor a {
+.nav-anchor-link {
 	display: flex;
 	padding: .1em .5em;
 }
@@ -271,7 +271,7 @@ hr {
 
 
 @media only screen
-and (max-width : 38em) {
+and (max-width : 40em) {
 	#menubar {
 		justify-content: start;
 	}

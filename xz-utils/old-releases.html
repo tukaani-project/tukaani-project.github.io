@@ -38,7 +38,27 @@
 			
 		</div>
 
-		<table id="table-menubar" class="menubar-container2">
+		<table id="table-menubar">
+		</table>
+
+		<img id="logo" alt="" src="/resources/logo.png">
+	</div>
+
+	<script>
+		var logo_small = false;
+		var logo = document.getElementById("logo");
+
+		logo.onclick = function () {
+			if (logo_small) {
+				logo.style.transform = "scale(100%, 100%)";
+			}
+			else {
+				logo.style.transform = "scale(100%, 30%)";
+			}
+			logo_small = !logo_small;
+		}
+
+		const table_menubar_contents = `
 			<tr>
 				<td>
 				
@@ -78,24 +98,10 @@
 				
 				</td>
 			</tr>
-		</table>
+		`;
 
-		<img id="logo" alt="" src="/resources/logo.png">
-	</div>
-
-	<script>
-		var logo_small = false;
-		var logo = document.getElementById("logo");
-
-		logo.onclick = function () {
-			if (logo_small) {
-				logo.style.transform = "scale(100%, 100%)";
-			}
-			else {
-				logo.style.transform = "scale(100%, 30%)";
-			}
-			logo_small = !logo_small;
-		}
+		const table_menubar = document.getElementById("table-menubar");
+		table_menubar.innerHTML = table_menubar_contents;
 	</script>
 
 	<div id="content">
@@ -103,10 +109,10 @@
 <hr>
 
 <div id="nav-anchor" style="position: unset">
-	<a href="#source">Source Releases</a>
-	<a href="#binary">Binary Releases</a>
-	<a style="padding-left: 2em;" href="#windows">Windows</a>
-	<a style="padding-left: 2em;" href="#dos">Dos</a>
+	<a class="nav-anchor-link" href="#source">Source Releases</a>
+	<a class="nav-anchor-link" href="#binary">Binary Releases</a>
+	<a class="nav-anchor-link" style="padding-left: 2em;" href="#windows">Windows</a>
+	<a class="nav-anchor-link" style="padding-left: 2em;" href="#dos">Dos</a>
 </div>
 
 <p>
