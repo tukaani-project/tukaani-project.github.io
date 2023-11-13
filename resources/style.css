@@ -1,5 +1,6 @@
 html {
 	scroll-behavior: smooth;
+	overflow-y: scroll;
 }
 
 
@@ -186,6 +187,8 @@ table {
 	font-family: Consolas,"courier new";
 	border-radius: .25em;
 }
+
+
 .file {
 	padding: .1em .25em;
 	background-color: #0002;

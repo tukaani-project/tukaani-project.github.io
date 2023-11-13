@@ -45,63 +45,65 @@
 	</div>
 
 	<script>
-		var logo_small = false;
-		var logo = document.getElementById("logo");
+		window.onload = function() {
+			var logo_small = false;
+			var logo = document.getElementById("logo");
 
-		logo.onclick = function () {
-			if (logo_small) {
-				logo.style.transform = "scale(100%, 100%)";
+			logo.onclick = function () {
+				if (logo_small) {
+					logo.style.transform = "scale(100%, 100%)";
+				}
+				else {
+					logo.style.transform = "scale(100%, 30%)";
+				}
+				logo_small = !logo_small;
 			}
-			else {
-				logo.style.transform = "scale(100%, 30%)";
-			}
-			logo_small = !logo_small;
+
+			const table_menubar_contents = `
+				<tr>
+					<td>
+					
+						<a href="/">Home</a>
+					
+					</td>
+
+					<td>
+					
+						<a href="/xz-utils/">XZ Utils</a>
+					
+					</td>
+
+					<td>
+					
+						<a class="active" href="/xz-for-java/">XZ for Java</a>
+					
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+					
+						<a href="/xz-embedded/">XZ Embedded</a>
+					
+					</td>
+
+					<td>
+					
+						<a href="/format/">XZ File Format</a>
+					
+					</td>
+
+					<td>
+					
+						<a href="/contact.html">Contact</a>
+					
+					</td>
+				</tr>
+			`;
+
+			const table_menubar = document.getElementById("table-menubar");
+			table_menubar.innerHTML = table_menubar_contents;
 		}
-
-		const table_menubar_contents = `
-			<tr>
-				<td>
-				
-					<a href="/">Home</a>
-				
-				</td>
-
-				<td>
-				
-					<a href="/xz-utils/">XZ Utils</a>
-				
-				</td>
-
-				<td>
-				
-					<a class="active" href="/xz-for-java/">XZ for Java</a>
-				
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-				
-					<a href="/xz-embedded/">XZ Embedded</a>
-				
-				</td>
-
-				<td>
-				
-					<a href="/format/">XZ File Format</a>
-				
-				</td>
-
-				<td>
-				
-					<a href="/contact.html">Contact</a>
-				
-				</td>
-			</tr>
-		`;
-
-		const table_menubar = document.getElementById("table-menubar");
-		table_menubar.innerHTML = table_menubar_contents;
 	</script>
 
 	<div id="content">
