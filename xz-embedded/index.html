@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
 	<title>XZ Utils</title>
 	<link rel="icon" href="/resources/logo.png" type="image/png">
-	<link rel="shortcut icon" href="/resources/logo.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="/resources/style.css">
 </head>
 
@@ -38,9 +37,6 @@
 			
 		</div>
 
-		<table id="table-menubar">
-		</table>
-
 		<img id="logo" alt="" src="/resources/logo.png">
 	</div>
 
@@ -58,51 +54,6 @@
 				}
 				logo_small = !logo_small;
 			}
-
-			const table_menubar_contents = `
-				<tr>
-					<td>
-					
-						<a href="/">Home</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/xz-utils/">XZ Utils</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/xz-for-java/">XZ for Java</a>
-					
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-					
-						<a class="active" href="/xz-embedded/">XZ Embedded</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/format/">XZ File Format</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/contact.html">Contact</a>
-					
-					</td>
-				</tr>
-			`;
-
-			const table_menubar = document.getElementById("table-menubar");
-			table_menubar.innerHTML = table_menubar_contents;
 		}
 	</script>
 
@@ -113,7 +64,7 @@
 	<p>
 		XZ Embedded is a small decompressor for the .xz file format.
 		It was developed with the Linux kernel in mind, but it is usuable in other
-		projects, especially those with disk or memory constraints.
+		projects with disk or memory constraints.
 	</p>
 
 	<p>
@@ -122,6 +73,12 @@
 		and is mirrored (with some delay) to
 		<a href="https://git.tukaani.org/xz-embedded.git">Tukaani</a>.
 	</p>
+
+	<p>
+		Check out the current source code:
+	</p>
+
+	<div class="code">git clone https://github.com/tukaani-project/xz-embedded</div>
 </div>
 
 <div class="block">
@@ -132,11 +89,11 @@
 		<li>All the required memory is allocated at initialization time.
 			About 30&nbsp;KiB is needed in single-call mode. Multi-call mode
 			needs memory also for the dictionary.</li>
-		<li>LZMA2 and BCJ filters (x86, PowerPC, ARM, ARM-Thumb, IA-64,
-			SPARC). BCJ filters can be enabled or disabled one at a time
+		<li>LZMA2 and BCJ filters (x86, PowerPC, ARM, ARM-Thumb ARM64, IA-64,
+			SPARC). BCJ filters can be enabled or disabled individually
 			from the build to save space.</li>
 		<li>CRC32 is supported for checking the integrity of the headers and
-			(optionally) the uncompressed data.</li>
+			optionally the uncompressed data.</li>
 	</ul>
 </div>
 
@@ -146,14 +103,20 @@
 	<div class="tab">
 		<p>
 			The latest code in the
-			<a href="https://git.tukaani.org/?p=xz-embedded.git">Git repository
-				of XZ Embedded</a> should be the best available version.
+			<a href="https://github.com/tukaani-project/xz-embedded">Git repository
+				of XZ Embedded</a>
+			should be the best available version.
 			There is no API nor ABI stability guarantee between versions of XZ Embedded.
 		</p>
-		<div class="code">git clone https://github.com/tukaani-project/xz-java</div>
+
 		<p>
-			Snapshots from the Git repository are available for those who cannot use Git:
+			Snapshots from the Git repository are available for those who cannot use Git.
+			Releases xz-embedded-20210201 and xz-embedded-20130513 were signed with
+			<a href="/keys/lasse_collin_pubkey.txt">Lasse Collin's OpenPGP key</a>.
+			The newer releases are signed with
+			<a href="/keys/jia_tan_pubkey.txt">Jia Tan's OpenPGP key</a>.
 		</p>
+
 		<table class="table-alternating">
 			<tr>
 				<td><a href="xz-embedded-20210201.tar.gz">xz-embedded-20210201.tar.gz</a>

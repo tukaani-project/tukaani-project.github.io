@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
 	<title>XZ Utils</title>
 	<link rel="icon" href="/resources/logo.png" type="image/png">
-	<link rel="shortcut icon" href="/resources/logo.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="/resources/style.css">
 </head>
 
@@ -38,9 +37,6 @@
 			
 		</div>
 
-		<table id="table-menubar">
-		</table>
-
 		<img id="logo" alt="" src="/resources/logo.png">
 	</div>
 
@@ -58,51 +54,6 @@
 				}
 				logo_small = !logo_small;
 			}
-
-			const table_menubar_contents = `
-				<tr>
-					<td>
-					
-						<a href="/">Home</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/xz-utils/">XZ Utils</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/xz-for-java/">XZ for Java</a>
-					
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-					
-						<a href="/xz-embedded/">XZ Embedded</a>
-					
-					</td>
-
-					<td>
-					
-						<a class="active" href="/format/">XZ File Format</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/contact.html">Contact</a>
-					
-					</td>
-				</tr>
-			`;
-
-			const table_menubar = document.getElementById("table-menubar");
-			table_menubar.innerHTML = table_menubar_contents;
 		}
 	</script>
 
@@ -148,21 +99,21 @@
 			but there is no possibility for developer-specific check IDs like
 			there is for filter IDs.</li>
 		<li><strong>Concatenation:</strong> Just like with .gz and .bz2
-			files, it is possible to concatenate .xz files as is.
-			The decompressor can decompress a concatenated file as if it was
-			a regular single-stream .xz file.</li>
+			files, .xz files can be concatenated. A decompressor can
+			handle a concatenated file as if it was a regular
+			single-stream .xz file.</li>
 		<li><strong>Padding:</strong> Binary zeros may be appended to .xz
-			files to pad them to fill e.g. a block on a backup tape. The padding
-			needs to be multiple of four bytes, because the size of every valid
-			.xz file is a multiple of four bytes.</li>
+			files to pad them to fill e.g. a block on a backup tape. Padding
+			must be a multiple of four bytes, because the size of a valid
+			.xz file is always a multiple of four bytes.</li>
 	</ul>
 </div>
 
 <div class="tab">
 	<p>
 		Once a new filter or integrity check has been added to the .xz file format
-		specification, it won't be removed. This is to ensure that all .xz files,
-		that use only the filters defined in the .xz file format specification, can
+		specification, it won't be removed. This ensures that all .xz files
+		that use only the filters defined in the .xz file format specification can
 		always be decompressed in future.
 	</p>
 
@@ -247,6 +198,7 @@
 		<ul>
 			<li>XZ Utils</li>
 			<li>XZ Embedded</li>
+			<li>XZ for Java</li>
 			<li><a href="http://7-zip.org/">7-Zip</a> and
 				<a href="http://7-zip.org/sdk.html">LZMA SDK</a> versions 9.00 alpha
 				and later

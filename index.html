@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
 	<title>XZ Utils</title>
 	<link rel="icon" href="/resources/logo.png" type="image/png">
-	<link rel="shortcut icon" href="/resources/logo.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="/resources/style.css">
 </head>
 
@@ -38,9 +37,6 @@
 			
 		</div>
 
-		<table id="table-menubar">
-		</table>
-
 		<img id="logo" alt="" src="/resources/logo.png">
 	</div>
 
@@ -58,51 +54,6 @@
 				}
 				logo_small = !logo_small;
 			}
-
-			const table_menubar_contents = `
-				<tr>
-					<td>
-					
-						<a class="active" href="/">Home</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/xz-utils/">XZ Utils</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/xz-for-java/">XZ for Java</a>
-					
-					</td>
-				</tr>
-
-				<tr>
-					<td>
-					
-						<a href="/xz-embedded/">XZ Embedded</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/format/">XZ File Format</a>
-					
-					</td>
-
-					<td>
-					
-						<a href="/contact.html">Contact</a>
-					
-					</td>
-				</tr>
-			`;
-
-			const table_menubar = document.getElementById("table-menubar");
-			table_menubar.innerHTML = table_menubar_contents;
 		}
 	</script>
 
@@ -111,21 +62,28 @@
 
 <div class="tab">
 	<p>
-		The projects
-		<a href="https://github.com/tukaani-project/xz">XZ Utils</a>,
-		<a href="https://github.com/tukaani-project/xz-embedded">XZ Embedded</a>,
-		and
-		<a href="https://github.com/tukaani-project/xz-java">XZ for Java</a>
-		are all maintained under the XZ Projects. Previously, they were maintained
-		under the <a href="https://tukaani.org">Tukaani Project</a>, which was a
-		Slackware based distribution. Nowadays the Tukaani Project no longer exists,
-		but this work led to the XZ Projects.
-	</p>
-	<p>
 		XZ is a general-purpose data compression format. It is a streamable
 		container format that allows for multiple filters, random-access reading,
 		and a few different integrity check types. New filters are occasionally
 		added to improve compression with specific types of data.
+	</p>
+
+	<p>
+		The XZ Projects consist of
+		<a href="https://github.com/tukaani-project/xz">XZ Utils</a>,
+		<a href="https://github.com/tukaani-project/xz-embedded">XZ Embedded</a>,
+		and
+		<a href="https://github.com/tukaani-project/xz-java">XZ for Java</a>.
+		The XZ projects exist under the wing of the
+		<a href="https://tukaani.org">Tukaani Project</a> and are developed in the
+		<a href="https://github.com/tukaani-project">Tukaani Project GitHub Organization</a>.
+		Releases are available on GitHub and the project specific pages of this site.
+	</p>
+
+	<p class="border-block">
+		<b>Note</b>: GitHub automatically includes two archives
+		Source code (zip) and Source code (tar.gz) in the releases.
+		These archives cannot be disabled and should be ignored.
 	</p>
 </div>
 <br>
