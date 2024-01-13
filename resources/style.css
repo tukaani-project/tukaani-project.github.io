@@ -11,6 +11,7 @@ body {
 	font-family: sans-serif;
 	background-color: #dfdfdf;
 	color: #2f2f36;
+	line-height: 1.6;
 }
 
 
@@ -23,7 +24,13 @@ body {
 
 
 #content a {
-	text-decoration: none;
+	text-decoration: underline;
+}
+
+
+a[href^="#"]:visited {
+	color: #04B;
+	color: #03C;
 }
 
 
@@ -53,7 +60,7 @@ body {
 	justify-content: center;
 	flex: 1 0 max-content;
 	font-size: 1.25em;
-	font-weight: normal;
+	text-decoration: none;
 	color: #acacb0;
 }
 
@@ -96,6 +103,12 @@ body {
 .nav-anchor-link {
 	display: flex;
 	padding: .1em .5em;
+	text-decoration: none !important;
+}
+
+
+.nav-anchor-link:hover {
+	text-decoration: underline !important;
 }
 
 
@@ -192,7 +205,7 @@ table {
 	color: white;
 	padding: .5em;
 	background-color: #000000;
-	font-family: Consolas,"courier new";
+	font-family: monospace, monospace;
 	border-radius: .25em;
 }
 
@@ -200,7 +213,7 @@ table {
 .file {
 	padding: .1em .25em;
 	background-color: #0002;
-	font-family: Consolas,"courier new";
+	font-family: monospace, monospace;
 	border-radius: .25em;
 }
 
@@ -228,8 +241,6 @@ table {
 
 a {
 	color: #36C;
-	font-weight: bold;
-	text-decoration: none;
 }
 
 
@@ -238,8 +249,9 @@ a:visited {
 }
 
 
-a:hover {
+#content a:hover {
 	color: #039;
+	text-decoration: none;
 }
 
 
