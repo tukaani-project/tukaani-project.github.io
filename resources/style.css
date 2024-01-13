@@ -25,6 +25,8 @@ body {
 
 #content a {
 	text-decoration: underline;
+	text-decoration-thickness: 0.0625em;
+	text-underline-offset: 0.125em;
 }
 
 
@@ -109,6 +111,8 @@ a[href^="#"]:visited {
 
 .nav-anchor-link:hover {
 	text-decoration: underline !important;
+	text-decoration-thickness: 0.0625em !important;
+	text-underline-offset: 0.125em !important;
 }
 
 
@@ -120,6 +124,7 @@ a[href^="#"]:visited {
 .anchor:hover .anchor-indicator {
 	visibility: visible;
 	cursor: pointer;
+	text-decoration: none !important;
 }
 
 
