@@ -31,7 +31,6 @@ body {
 
 
 a[href^="#"]:visited {
-	color: #04B;
 	color: #03C;
 }
 
