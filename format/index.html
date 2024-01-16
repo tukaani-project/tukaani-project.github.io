@@ -83,18 +83,19 @@
 			into independently compressed blocks. Every .xz file contains
 			an index of the blocks, which makes limited random-access reading
 			possible when the block size is small enough.</li>
-		<li><strong>Multiple filters (algorithms):</strong> It is possible
-			to add support for new filters, so no new file format is needed
-			every time a new algorithm has been developed. Developers can use
-			a developer-specific filter ID space for experimental filters.</li>
+		<li><strong>Multiple filters (compression methods):</strong>
+			It is possible to add support for new filters, so no new file
+			format is needed every time a new algorithm has been developed.
+			Developers can usea developer-specific filter ID space for
+			experimental filters.</li>
 		<li><strong>Filter chaining:</strong> Up to four filters can
 			be chained, which is very similar to piping on the UN*X
 			command line. Chaining can improve compression ratio with some
-			file types. Different filter chain can be used for every
+			file types. Different filter chains can be used for every
 			independently compressed block.</li>
-		<li><strong>Integrity checks:</strong> Integrity of all headers
-			is always protected with CRC32. The integrity of the actual data may
-			be verified with CRC32, CRC64, SHA-256, or the check may be omitted
+		<li><strong>Integrity checks:</strong> Metadata is always protected
+			with CRC32. The integrity of the actual data may be verified
+			with CRC32, CRC64, SHA-256, or the check may be omitted
 			completely. It is possible to add new integrity checks in future,
 			but there is no possibility for developer-specific check IDs like
 			there is for filter IDs.</li>
@@ -104,7 +105,7 @@
 			single-stream .xz file.</li>
 		<li><strong>Padding:</strong> Binary zeros may be appended to .xz
 			files to pad them to fill e.g. a block on a backup tape. Padding
-			must be a multiple of four bytes, because the size of a valid
+			must be a multiple of four bytes because the size of a valid
 			.xz file is always a multiple of four bytes.</li>
 	</ul>
 </div>
@@ -193,7 +194,7 @@
 	<h2>Implementations</h2>
 	<div class="tab">
 		<p>
-			At least the following software support the .xz file format:
+			At least the following software supports the .xz file format:
 		</p>
 		<ul>
 			<li>XZ Utils</li>
