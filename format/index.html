@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
-	<title>XZ Utils</title>
+	<title>The .xz file format</title>
 	<link rel="icon" href="/resources/logo.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="/resources/style.css">
 </head>
@@ -140,12 +140,12 @@
 			compressible.
 		</li>
 		<li>
-			The encoder settings and dictionary can be reset between data
-			chunks. This can improve compression in files with different
-			types of data.
+			Dictionary can be reset between data chunks for multithreaded
+			encoding and decoding.
 		</li>
 		<li>
-			Allows for mulithreaded encoding or decoding.
+			The LZMA properties can be reset between data chunks to match
+			different types of data being compressed.
 		</li>
 	</ul>
 </div>

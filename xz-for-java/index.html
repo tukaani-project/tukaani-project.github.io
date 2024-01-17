@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
-	<title>XZ Utils</title>
+	<title>XZ for Java</title>
 	<link rel="icon" href="/resources/logo.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="/resources/style.css">
 </head>
@@ -70,7 +70,7 @@
 		The project's main repository is on
 		<a href="https://github.com/tukaani-project/xz-java">GitHub</a>
 		and is mirrored (with some delay) to
-		<a href="https://git.tukaani.org/?p=xz-java.git">Tukaani</a>.
+		<a href="https://git.tukaani.org/?p=xz-java.git">git.tukaani.org</a>.
 	</p>
 
 	<p>
@@ -83,10 +83,6 @@
 <div class="block">
 	<h2>Features</h2>
 	<div class="tab">
-		<p>
-			XZ for Java supports single-threaded streamed compression and decompression
-			and random access decompression. Threading is planned but has not been implemented.
-		</p>
 		<ul>
 			<li>
 				Single-threaded streamed compression and decompression.
@@ -95,16 +91,18 @@
 				Random access decompression.
 			</li>
 			<li>
-				Delta, BCJ (x86, PowerPC, ARM, ARM-Thumb, IA-64, SPARC),
-				and LZMA2 filters. The ARM64 filter is complete, but is not part
+				Delta, BCJ (x86, ARM, ARM-Thumb, PowerPC, IA-64, SPARC),
+				and LZMA2 filters. The ARM64 filter is complete but is not part
 				of an official release yet.
 			</li>
 			<li>
-				All checksum types from the
-				<a href="format">xz-file-format</a>
-				(CRC32, CRC64, SHA256).
+				All check types from the .xz format (CRC32, CRC64, SHA256).
 			</li>
 		</ul>
+
+		<p class="mb0">
+			Threading is planned but has not been implemented.
+		</p>
 	</div>
 </div>
 
@@ -127,7 +125,7 @@
 		<div class="tab">
 			<p style="margin-top:.25em">
 				Version 1.9 was released on 2021-03-12. See the
-				<a href="https://git.tukaani.org/?p=xz-java.git;a=blob;f=NEWS;hb=HEAD">NEWS</a>
+				<a href="https://github.com/tukaani-project/xz-java/blob/master/NEWS">NEWS</a>
 				file for a summary of changes between versions.
 			</p>
 

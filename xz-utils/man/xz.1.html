@@ -1,13 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-	"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="manpage2html.bash">
 	<title>XZ(1)</title>
 	<style type="text/css">
-		a, a:visited { color: #005; text-decoration: none; }
-		a:hover, a:active { color: #00F; text-decoration: underline; }
+		pre {
+			font-family: monospace, monospace;
+			background: #fff;
+			color: #222;
+		}
+		a {
+			color: #03c;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a:active {
+			color: #e00;
+		}
 	</style>
 </head>
 
@@ -59,11 +72,11 @@ XZ(1)                              XZ Utils                              XZ(1)
        <b>xz</b> [<i>option...</i>]  [<i>file...</i>]
 
 <a name="COMMAND_ALIASES"></a><b><a href="#COMMAND_ALIASES">COMMAND ALIASES</a></b>
-<a name="--decompress"></a>       <b>unxz</b> is equivalent to <b>xz <a href="#--decompress">--decompress</a></b>.
-<a name="--decompress"></a><a name="--stdout"></a>       <b>xzcat</b> is equivalent to <b>xz <a href="#--decompress">--decompress</a> <a href="#--stdout">--stdout</a></b>.
-<a name="--format"></a>       <b>lzma</b> is equivalent to <b>xz <a href="#--format">--format</a>=lzma</b>.
-<a name="--format"></a><a name="--decompress"></a>       <b>unlzma</b> is equivalent to <b>xz <a href="#--format">--format</a>=lzma <a href="#--decompress">--decompress</a></b>.
-<a name="--format"></a><a name="--decompress"></a><a name="--stdout"></a>       <b>lzcat</b> is equivalent to <b>xz <a href="#--format">--format</a>=lzma <a href="#--decompress">--decompress</a> <a href="#--stdout">--stdout</a></b>.
+       <b>unxz</b> is equivalent to <b>xz <a href="#--decompress">--decompress</a></b>.
+       <b>xzcat</b> is equivalent to <b>xz <a href="#--decompress">--decompress</a> <a href="#--stdout">--stdout</a></b>.
+       <b>lzma</b> is equivalent to <b>xz <a href="#--format">--format</a>=lzma</b>.
+       <b>unlzma</b> is equivalent to <b>xz <a href="#--format">--format</a>=lzma <a href="#--decompress">--decompress</a></b>.
+       <b>lzcat</b> is equivalent to <b>xz <a href="#--format">--format</a>=lzma <a href="#--decompress">--decompress</a> <a href="#--stdout">--stdout</a></b>.
 
        When writing scripts that need to decompress files, it  is  recommended
        to  always use the name <b>xz</b> with appropriate arguments (<b>xz <a href="#-d">-d</a></b> or <b>xz -dc</b>)

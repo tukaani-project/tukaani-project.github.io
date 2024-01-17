@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css">
-	<title>XZ Utils</title>
+	<title>XZ Embedded</title>
 	<link rel="icon" href="/resources/logo.png" type="image/png">
 	<link rel="stylesheet" type="text/css" href="/resources/style.css">
 </head>
@@ -63,15 +63,15 @@
 <div class="tab">
 	<p>
 		XZ Embedded is a small decompressor for the .xz file format.
-		It was developed with the Linux kernel in mind, but it is usuable in other
-		projects with disk or memory constraints.
+		It was developed with the Linux kernel in mind, but it is
+		easily usable in other projects too.
 	</p>
 
 	<p>
 		The project's main repository is on
 		<a href="https://github.com/tukaani-project/xz-embedded">GitHub</a>
 		and is mirrored (with some delay) to
-		<a href="https://git.tukaani.org/xz-embedded.git">Tukaani</a>.
+		<a href="https://git.tukaani.org/xz-embedded.git">git.tukaani.org</a>.
 	</p>
 
 	<p>
@@ -86,14 +86,15 @@
 	<ul>
 		<li>Compiled code is 8&ndash;20&nbsp;KiB.</li>
 		<li>Supports both single-call and multi-call API.</li>
-		<li>All the required memory is allocated at initialization time.
-			About 30&nbsp;KiB is needed in single-call mode. Multi-call mode
+		<li>About 30&nbsp;KiB is needed in single-call mode. Multi-call mode
 			needs memory also for the dictionary.</li>
-		<li>LZMA2 and BCJ filters (x86, PowerPC, ARM, ARM-Thumb ARM64, IA-64,
+		<li>LZMA2 and BCJ filters (x86, ARM, ARM-Thumb, ARM64, PowerPC, IA-64,
 			SPARC). BCJ filters can be enabled or disabled individually
-			from the build to save space.</li>
-		<li>CRC32 is supported for checking the integrity of the headers and
-			optionally the uncompressed data.</li>
+			from the build to reduce code size.</li>
+		<li>CRC32 and (optionally) CRC64 are supported for checking the
+			integrity of the headers and optionally the uncompressed
+			data. (The version included in the Linux kernel doesn't
+			support CRC64.)</li>
 	</ul>
 </div>
 
@@ -121,27 +122,27 @@
 
 		<table class="table-alternating">
 			<tr>
-				<td><a href="xz-embedded-20210201.tar.gz">xz-embedded-20210201.tar.gz</a>
+				<td><a href="files/xz-embedded-20210201.tar.gz">xz-embedded-20210201.tar.gz</a>
 					(38 KiB)
-					<a href="xz-embedded-20210201.tar.gz.sig">signature</a>
+					<a href="files/xz-embedded-20210201.tar.gz.sig">signature</a>
 				</td>
 			</tr>
 			<tr>
-				<td><a href="xz-embedded-20130513.tar.gz">xz-embedded-20130513.tar.gz</a>
+				<td><a href="files/xz-embedded-20130513.tar.gz">xz-embedded-20130513.tar.gz</a>
 					(38 KiB)
-					<a href="xz-embedded-20130513.tar.gz.sig">signature</a>
+					<a href="files/xz-embedded-20130513.tar.gz.sig">signature</a>
 				</td>
 			</tr>
 			<tr>
-				<td><a href="xz-embedded-20120222.tar.gz">xz-embedded-20120222.tar.gz</a>
+				<td><a href="files/xz-embedded-20120222.tar.gz">xz-embedded-20120222.tar.gz</a>
 					(37 KiB)</td>
 			</tr>
 			<tr>
-				<td><a href="xz-embedded-20100702.tar.gz">xz-embedded-20100702.tar.gz</a>
+				<td><a href="files/xz-embedded-20100702.tar.gz">xz-embedded-20100702.tar.gz</a>
 					(37 KiB)</td>
 			</tr>
 			<tr>
-				<td><a href="xz-embedded-20090902.tar.gz">xz-embedded-20090902.tar.gz</a>
+				<td><a href="files/xz-embedded-20090902.tar.gz">xz-embedded-20090902.tar.gz</a>
 					(35 KiB)</td>
 			</tr>
 		</table>

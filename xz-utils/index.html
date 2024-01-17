@@ -71,10 +71,9 @@
 </div>
 <div class="tab">
 	<p>
-		XZ Utils is a complete C99 implementation of the
-		<a href="/format/">.xz file format</a>.
-		XZ Utils were originally written for POSIX systems, but will also work
-		on others such as Windows, OS/2, and DOS.
+		XZ Utils is a complete C99 implementation of the .xz file format.
+		XZ Utils were originally written for POSIX systems, but has been
+		ported to a few non-POSIX systems over the years.
 	</p>
 
 	<p>
@@ -129,9 +128,9 @@
 		</p>
 		<p>
 			See the
-			<a href="https://git.tukaani.org/?p=xz.git;a=blob;f=NEWS;hb=HEAD">NEWS</a>
+			<a href="https://github.com/tukaani-project/xz/blob/master/NEWS">NEWS</a>
 			file for a summary of changes between versions.
-			A more detailed Changelog is provided in the source code releases.
+			A more detailed change log is provided in the source code releases.
 		</p>
 
 		<div class="dark-block">
@@ -217,10 +216,6 @@
 				<p class="mb0">
 					All releases since 5.2.10 and 5.4.0 are hosted on
 					<a href="https://github.com/tukaani-project/xz/releases">GitHub</a>.
-					Older release files are also available in the
-					<a href="https://sourceforge.net/projects/lzmautils/files/">XZ Utils files
-						section on
-						Sourceforge</a>.
 				</p>
 			</div>
 		</div>
@@ -294,7 +289,7 @@
 			The project's main repository is on
 			<a href="https://github.com/tukaani-project/xz">GitHub</a>
 			and is mirrored (with some delay) to
-			<a href="https://git.tukaani.org/?p=xz.git">Tukaani</a>.
+			<a href="https://git.tukaani.org/?p=xz.git">git.tukaani.org</a>.
 		</p>
 
 		<p>
@@ -310,9 +305,8 @@
 			<p>
 				XZ Utils should primarily be built using GNU Autotools.
 				CMake is also supported for liblzma, but it has limited support for
-				xz, xzdec, and the scripts, among other various features. The planned
-				5.6.0 release will expand the CMake support including being able to build
-				xz and xzdec with MSVC on Windows for the first time!
+				xz, xzdec, and the scripts, among other various features.
+				Improvements to CMake support are coming in the near future though.
 			</p>
 
 			<div class="dark-block">
@@ -354,7 +348,7 @@
 				<ul>
 					<li><b>master</b>: the latest development code</li>
 					<li><b>v5.4</b>: fixes for the next 5.4.x release</li>
-					<li><b>v5.2</b>: fixes for the next 5.2.x release</li>
+					<li><b>v5.2</b>: fixes for the next 5.2.x release (unmaintained)</li>
 					<li><b>v5.0</b>: fixes for the next 5.0.x release (unmaintained)</li>
 				</ul>
 			</div>
@@ -371,17 +365,6 @@
 			<p class="mt0">
 				Python 3.3 includes
 				<a href="https://docs.python.org/3/library/lzma">bindings for liblzma</a>.
-				A backport of these bindings are available for Python 2 in the
-				<a href="https://pypi.python.org/pypi/backports.lzma">backports.lzma</a>
-				package.
-			</p>
-			<p>
-				<a href="https://pypi.python.org/pypi/lzmaffi">lzmaffi</a> is
-				another Python binding which adds random-access decompression support.
-			</p>
-			<p class="mb0">
-				The original Python 2 binding for liblzma is
-				<a href="https://pypi.python.org/pypi/pyliblzma">PylibLZMA</a>.
 			</p>
 		</div>
 		<br>
@@ -422,17 +405,14 @@
 	<div class="tab">
 		<p>
 			Many free software operating systems already provide easy-to-install
-			XZ Utils binaries.
-			It doesn't make sense to provide links to all those here.
-			Instead, binaries or links to websites providing binaries are listed here
-			only for operating systems that don't have well-known repositories where
-			users would get software like this.
+			XZ Utils binaries. It doesn't make sense to provide links to all
+			those here.
 		</p>
+
 		<p>
-			If you have a website that provides up-to-date XZ Utils binaries for
-			an operating system that meets the the criteria above, let me know
-			and I will include a link here. Note that I won't host the binaries
-			themselves without a good reason.
+			Windows and DOS binaries are provided here for older versions of XZ Utils.
+			If there is any interest in future versions of these binaries then
+			please contact us.
 		</p>
 
 		<div class="dark-block">
@@ -576,8 +556,8 @@
 			Below is an incomplete and somewhat vague (version numbers mostly missing)
 			list of operating systems on which XZ Utils should work.
 			The compiler(s) or toolchains are mentioned in parenthesis.
-			GCC refers to GCC 3 or later.
-			If you have additions or corrections, please email them to me.
+			GCC refers to GCC 3 or later. If you have additions or corrections,
+			please contact us.
 		</p>
 		<ul>
 			<li>GNU/Linux (GCC, Clang, ICC, IBM XL C)</li>
@@ -638,7 +618,7 @@
 		</p>
 		<p class="mb0">
 			See the file
-			<a href="https://git.tukaani.org/?p=xz.git;a=blob;f=COPYING">COPYING</a>
+			<a href="https://github.com/tukaani-project/xz/blob/master/COPYING">COPYING</a>
 			for more details.
 		</p>
 	</div>
