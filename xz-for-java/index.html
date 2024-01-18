@@ -21,11 +21,11 @@
 			
 
 			
-				<a class="active" href="/xz-for-java/">XZ for Java</a>
+				<a href="/xz-embedded/">XZ Embedded</a>
 			
 
 			
-				<a href="/xz-embedded/">XZ Embedded</a>
+				<a class="active" href="/xz-for-java/">XZ for Java</a>
 			
 
 			
@@ -66,44 +66,28 @@
 		in pure Java.
 	</p>
 
-	<p>
-		The project's main repository is on
-		<a href="https://github.com/tukaani-project/xz-java">GitHub</a>
-		and is mirrored (with some delay) to
-		<a href="https://git.tukaani.org/?p=xz-java.git">git.tukaani.org</a>.
+	<p>XZ for Java is notable for the following features:</p>
+
+	<ul>
+		<li>
+			Single-threaded streamed compression and decompression.
+		</li>
+		<li>
+			Random access decompression.
+		</li>
+		<li>
+			Delta, BCJ (x86, ARM, ARM-Thumb, PowerPC, IA-64, SPARC),
+			and LZMA2 filters. The ARM64 filter is complete but is not part
+			of an official release yet.
+		</li>
+		<li>
+			All check types from the .xz format (CRC32, CRC64, SHA256).
+		</li>
+	</ul>
+
+	<p class="mb0">
+		Threading is planned but has not been implemented.
 	</p>
-
-	<p>
-		Check out the current source code:
-	</p>
-
-	<div class="code">git clone https://github.com/tukaani-project/xz-java</div>
-</div>
-
-<div class="block">
-	<h2>Features</h2>
-	<div class="tab">
-		<ul>
-			<li>
-				Single-threaded streamed compression and decompression.
-			</li>
-			<li>
-				Random access decompression.
-			</li>
-			<li>
-				Delta, BCJ (x86, ARM, ARM-Thumb, PowerPC, IA-64, SPARC),
-				and LZMA2 filters. The ARM64 filter is complete but is not part
-				of an official release yet.
-			</li>
-			<li>
-				All check types from the .xz format (CRC32, CRC64, SHA256).
-			</li>
-		</ul>
-
-		<p class="mb0">
-			Threading is planned but has not been implemented.
-		</p>
-	</div>
 </div>
 
 <div class="block">
@@ -111,7 +95,7 @@
 	<div class="tab">
 		<p class="m0">
 			The
-			<a href="/xz-for-java/xz-javadoc/">API documentation</a>
+			<a href="/xz-for-java/javadoc/">API documentation</a>
 			was generated from the latest release with javadoc.
 		</p>
 	</div>
@@ -148,6 +132,22 @@
 			</p>
 		</div>
 	</div>
+</div>
+
+<div class="block">
+	<h2>Development</h2>
+	<p>
+		The project's main repository is on
+		<a href="https://github.com/tukaani-project/xz-java">GitHub</a>
+		and is mirrored (with some delay) to
+		<a href="https://git.tukaani.org/?p=xz-java.git">git.tukaani.org</a>.
+	</p>
+
+	<p>
+		Check out the current source code:
+	</p>
+
+	<div class="code">git clone https://github.com/tukaani-project/xz-java</div>
 </div>
 
 <div class="block">
