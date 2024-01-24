@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="manpage2html.bash">
+	<title>XZDEC(1)</title>
+	<style type="text/css">
+		body {
+			background: #d8d8d8;
+			margin: 0;
+		}
+		pre {
+			background: #fff;
+			color: #222;
+			font-family: monospace, monospace;
+			font-size: 0.925em;
+			line-height: 1.4;
+			width: 80ch;
+			margin: 1.5em auto;
+			padding: 4ch clamp(0ch, 50% - 40ch - 2px, 6ch);
+			border: solid 1px #555;
+			box-shadow: 0 0.375em 1.25em rgb(0 0 0 / 0.5);
+		}
+		a {
+			color: #03c;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a:active {
+			color: #e00;
+		}
+		@media print {
+			* {
+				color: #000 !important;
+				background: none !important;
+			}
+			pre {
+				font-size: 0.8em;
+				margin: 0 auto;
+				padding: 0;
+				border: none;
+				box-shadow: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<pre>
+<i>XZDEC</i>(1)                           XZ Utils                           <i>XZDEC</i>(1)
+
+<b>TABLE OF CONTENTS</b>
+       <b><a href="#NAME">NAME</a></b>
+       <b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b><a href="#OPTIONS">OPTIONS</a></b>
+       <b><a href="#EXIT_STATUS">EXIT STATUS</a></b>
+       <b><a href="#NOTES">NOTES</a></b>
+       <b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b><a href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+
+<a name="NAME"></a><b><a href="#NAME">NAME</a></b>
+       xzdec, lzmadec - Small .xz and .lzma decompressors
+
+<a name="SYNOPSIS"></a><b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b>xzdec</b> [<i>option...</i>]  [<i>file...</i>]
+       <b>lzmadec</b> [<i>option...</i>]  [<i>file...</i>]
+
+<a name="DESCRIPTION"></a><b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b>xzdec</b> is a liblzma-based decompression-only tool for <b>.xz</b> (and only <b>.xz</b>)
+       files.  <b>xzdec</b> is intended to work as a drop-in replacement for <b>xz</b>(1) in
+       the  most  common  situations where a script has been written to use <b>xz</b>
+       <b><a href="#--decompress">--decompress</a> <a href="#--stdout">--stdout</a></b> (and possibly a few other commonly used  options)
+       to decompress <b>.xz</b> files.  <b>lzmadec</b> is identical to <b>xzdec</b> except that <b>lz-</b>
+       <b>madec</b> supports <b>.lzma</b> files instead of <b>.xz</b> files.
+
+       To  reduce  the  size  of  the executable, <b>xzdec</b> doesn't support multi-
+       threading or localization, and doesn't read  options  from  <b>XZ_DEFAULTS</b>
+       and <b>XZ_OPT</b> environment variables.  <b>xzdec</b> doesn't support displaying in-
+       termediate progress information: sending <b>SIGINFO</b> to <b>xzdec</b> does nothing,
+       but  sending  <b>SIGUSR1</b>  terminates  the  process  instead  of displaying
+       progress information.
+
+<a name="OPTIONS"></a><b><a href="#OPTIONS">OPTIONS</a></b>
+<a name="-d"></a><a name="--decompress"></a><a name="--uncompress"></a>       <b><a href="#-d">-d</a></b>, <b><a href="#--decompress">--decompress</a></b>, <b><a href="#--uncompress">--uncompress</a></b>
+              Ignored for <b>xz</b>(1) compatibility.  <b>xzdec</b> supports only decompres-
+              sion.
+
+<a name="-k"></a><a name="--keep"></a>       <b><a href="#-k">-k</a></b>, <b><a href="#--keep">--keep</a></b>
+              Ignored for <b>xz</b>(1) compatibility.  <b>xzdec</b> never creates or removes
+              any files.
+
+<a name="-c"></a><a name="--stdout"></a><a name="--to-stdout"></a>       <b><a href="#-c">-c</a></b>, <b><a href="#--stdout">--stdout</a></b>, <b><a href="#--to-stdout">--to-stdout</a></b>
+              Ignored for <b>xz</b>(1) compatibility.  <b>xzdec</b> always writes the decom-
+              pressed data to standard output.
+
+<a name="-q"></a><a name="--quiet"></a>       <b><a href="#-q">-q</a></b>, <b><a href="#--quiet">--quiet</a></b>
+              Specifying this once does nothing since <b>xzdec</b> never displays any
+              warnings or notices.  Specify this twice to suppress errors.
+
+<a name="-Q"></a><a name="--no-warn"></a>       <b><a href="#-Q">-Q</a></b>, <b><a href="#--no-warn">--no-warn</a></b>
+              Ignored for <b>xz</b>(1) compatibility.  <b>xzdec</b> never uses the exit sta-
+              tus 2.
+
+<a name="-h"></a><a name="--help"></a>       <b><a href="#-h">-h</a></b>, <b><a href="#--help">--help</a></b>
+              Display a help message and exit successfully.
+
+<a name="-V"></a><a name="--version"></a>       <b><a href="#-V">-V</a></b>, <b><a href="#--version">--version</a></b>
+              Display the version number of <b>xzdec</b> and liblzma.
+
+<a name="EXIT_STATUS"></a><b><a href="#EXIT_STATUS">EXIT STATUS</a></b>
+       <b>0</b>      All was good.
+
+       <b>1</b>      An error occurred.
+
+       <b>xzdec</b> doesn't have any warning messages like <b>xz</b>(1) has, thus  the  exit
+       status 2 is not used by <b>xzdec</b>.
+
+<a name="NOTES"></a><b><a href="#NOTES">NOTES</a></b>
+       Use  <b>xz</b>(1)  instead of <b>xzdec</b> or <b>lzmadec</b> for normal everyday use.  <b>xzdec</b>
+       or <b>lzmadec</b> are meant only for situations where it is important to  have
+       a smaller decompressor than the full-featured <b>xz</b>(1).
+
+       <b>xzdec</b>  and  <b>lzmadec</b> are not really that small.  The size can be reduced
+       further by dropping features from liblzma at  compile  time,  but  that
+       shouldn't  usually  be done for executables distributed in typical non-
+       embedded operating system distributions.  If you need a truly small <b>.xz</b>
+       decompressor, consider using XZ Embedded.
+
+<a name="SEE_ALSO"></a><b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b>xz</b>(1)
+
+       XZ Embedded: &lt;<a href="https://tukaani.org/xz/embedded.html">https://tukaani.org/xz/embedded.html</a>&gt;
+
+<b><a name="KEYWORD_INDEX" href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+       <b><a href="#--decompress">--decompress</a></b>
+       <b><a href="#--help">--help</a></b>
+       <b><a href="#--keep">--keep</a></b>
+       <b><a href="#--no-warn">--no-warn</a></b>
+       <b><a href="#--quiet">--quiet</a></b>
+       <b><a href="#--stdout">--stdout</a></b>
+       <b><a href="#--to-stdout">--to-stdout</a></b>
+       <b><a href="#--uncompress">--uncompress</a></b>
+       <b><a href="#--version">--version</a></b>
+       <b><a href="#-c">-c</a></b>
+       <b><a href="#-d">-d</a></b>
+       <b><a href="#-h">-h</a></b>
+       <b><a href="#-k">-k</a></b>
+       <b><a href="#-q">-q</a></b>
+       <b><a href="#-V">-V</a></b>
+
+Tukaani                           2017-04-19                          <i>XZDEC</i>(1)
+</pre>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="manpage2html.bash">
+	<title>XZGREP(1)</title>
+	<style type="text/css">
+		body {
+			background: #d8d8d8;
+			margin: 0;
+		}
+		pre {
+			background: #fff;
+			color: #222;
+			font-family: monospace, monospace;
+			font-size: 0.925em;
+			line-height: 1.4;
+			width: 80ch;
+			margin: 1.5em auto;
+			padding: 4ch clamp(0ch, 50% - 40ch - 2px, 6ch);
+			border: solid 1px #555;
+			box-shadow: 0 0.375em 1.25em rgb(0 0 0 / 0.5);
+		}
+		a {
+			color: #03c;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a:active {
+			color: #e00;
+		}
+		@media print {
+			* {
+				color: #000 !important;
+				background: none !important;
+			}
+			pre {
+				font-size: 0.8em;
+				margin: 0 auto;
+				padding: 0;
+				border: none;
+				box-shadow: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<pre>
+<i>XZGREP</i>(1)                          XZ Utils                          <i>XZGREP</i>(1)
+
+<b>TABLE OF CONTENTS</b>
+       <b><a href="#NAME">NAME</a></b>
+       <b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b><a href="#EXIT_STATUS">EXIT STATUS</a></b>
+       <b><a href="#ENVIRONMENT">ENVIRONMENT</a></b>
+       <b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b><a href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+
+<a name="NAME"></a><b><a href="#NAME">NAME</a></b>
+       xzgrep - search compressed files for a regular expression
+
+<a name="SYNOPSIS"></a><b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b>xzgrep</b> [<i>grep_options</i>] [<b>-e</b>] <i>pattern</i> [<i>file...</i>]
+       <b>xzegrep</b> ...
+       <b>xzfgrep</b> ...
+       <b>lzgrep</b> ...
+       <b>lzegrep</b> ...
+       <b>lzfgrep</b> ...
+
+<a name="DESCRIPTION"></a><b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b>xzgrep</b>  invokes  <b>grep</b>(1)  on  <i>files</i> which may be either uncompressed or
+       compressed with <b>xz</b>(1), <b>lzma</b>(1), <b>gzip</b>(1), <b>bzip2</b>(1), <b>lzop</b>(1), or <b>zstd</b>(1).
+       All options specified are passed directly to <b>grep</b>(1).
+
+       If no <i>file</i> is specified, then standard input is decompressed if  neces-
+       sary  and  fed  to <b>grep</b>(1).  When reading from standard input, <b>gzip</b>(1),
+       <b>bzip2</b>(1), <b>lzop</b>(1), and <b>zstd</b>(1) compressed files are not supported.
+
+       If <b>xzgrep</b> is invoked as <b>xzegrep</b> or <b>xzfgrep</b> then <b>grep -E</b> or <b>grep  -F</b>  is
+       used  instead  of  <b>grep</b>(1).  The same applies to names <b>lzgrep</b>, <b>lzegrep</b>,
+       and <b>lzfgrep</b>, which are provided for backward  compatibility  with  LZMA
+       Utils.
+
+<a name="EXIT_STATUS"></a><b><a href="#EXIT_STATUS">EXIT STATUS</a></b>
+       0      At  least  one  match  was  found from at least one of the input
+              files.  No errors occurred.
+
+       1      No matches were found from any of the input  files.   No  errors
+              occurred.
+
+       &gt;1     One  or  more  errors  occurred.   It is unknown if matches were
+              found.
+
+<a name="ENVIRONMENT"></a><b><a href="#ENVIRONMENT">ENVIRONMENT</a></b>
+<a name="GREP"></a>       <b><a href="#GREP">GREP</a></b>   If the <b><a href="#GREP">GREP</a></b> environment variable is set, <b>xzgrep</b> uses it  instead
+              of <b>grep</b>(1), <b>grep -E</b>, or <b>grep -F</b>.
+
+<a name="SEE_ALSO"></a><b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b>grep</b>(1), <b>xz</b>(1), <b>gzip</b>(1), <b>bzip2</b>(1), <b>lzop</b>(1), <b>zstd</b>(1), <b>zgrep</b>(1)
+
+<b><a name="KEYWORD_INDEX" href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+       <b><a href="#GREP">GREP</a></b>
+
+Tukaani                           2022-07-19                         <i>XZGREP</i>(1)
+</pre>
+</body>
+</html>

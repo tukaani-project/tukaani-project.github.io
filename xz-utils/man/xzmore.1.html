@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="manpage2html.bash">
+	<title>XZMORE(1)</title>
+	<style type="text/css">
+		body {
+			background: #d8d8d8;
+			margin: 0;
+		}
+		pre {
+			background: #fff;
+			color: #222;
+			font-family: monospace, monospace;
+			font-size: 0.925em;
+			line-height: 1.4;
+			width: 80ch;
+			margin: 1.5em auto;
+			padding: 4ch clamp(0ch, 50% - 40ch - 2px, 6ch);
+			border: solid 1px #555;
+			box-shadow: 0 0.375em 1.25em rgb(0 0 0 / 0.5);
+		}
+		a {
+			color: #03c;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a:active {
+			color: #e00;
+		}
+		@media print {
+			* {
+				color: #000 !important;
+				background: none !important;
+			}
+			pre {
+				font-size: 0.8em;
+				margin: 0 auto;
+				padding: 0;
+				border: none;
+				box-shadow: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<pre>
+<i>XZMORE</i>(1)                          XZ Utils                          <i>XZMORE</i>(1)
+
+<b>TABLE OF CONTENTS</b>
+       <b><a href="#NAME">NAME</a></b>
+       <b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b><a href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+
+<a name="NAME"></a><b><a href="#NAME">NAME</a></b>
+       xzmore, lzmore - view xz or lzma compressed (text) files
+
+<a name="SYNOPSIS"></a><b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b>xzmore</b> [<i>file...</i>]
+       <b>lzmore</b> [<i>file...</i>]
+
+<a name="DESCRIPTION"></a><b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b>xzmore</b>  is  a  filter which allows examination of <b>xz</b>(1) or <b>lzma</b>(1) com-
+       pressed text files one screenful at a time on a soft-copy terminal.
+
+       To use a pager other than the default <b>more,</b>  set  environment  variable
+       <b>PAGER</b>  to the name of the desired program.  The name <b>lzmore</b> is provided
+       for backward compatibility with LZMA Utils.
+
+       <b>e</b> or <b>q</b> When the prompt --More--(Next file: <i>file</i>) is printed, this  com-
+              mand causes <b>xzmore</b> to exit.
+
+       <b>s</b>      When  the prompt --More--(Next file: <i>file</i>) is printed, this com-
+              mand causes <b>xzmore</b> to skip the next file and continue.
+
+       For list of keyboard commands supported while actually viewing the con-
+       tent of a file, refer to manual of the pager you use, usually <b>more</b>(1).
+
+<a name="SEE_ALSO"></a><b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b>more</b>(1), <b>xz</b>(1), <b>xzless</b>(1), <b>zmore</b>(1)
+
+<b><a name="KEYWORD_INDEX" href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+
+
+Tukaani                           2013-06-30                         <i>XZMORE</i>(1)
+</pre>
+</body>
+</html>

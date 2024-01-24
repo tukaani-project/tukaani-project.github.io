@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="generator" content="manpage2html.bash">
+	<title>XZDIFF(1)</title>
+	<style type="text/css">
+		body {
+			background: #d8d8d8;
+			margin: 0;
+		}
+		pre {
+			background: #fff;
+			color: #222;
+			font-family: monospace, monospace;
+			font-size: 0.925em;
+			line-height: 1.4;
+			width: 80ch;
+			margin: 1.5em auto;
+			padding: 4ch clamp(0ch, 50% - 40ch - 2px, 6ch);
+			border: solid 1px #555;
+			box-shadow: 0 0.375em 1.25em rgb(0 0 0 / 0.5);
+		}
+		a {
+			color: #03c;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		a:active {
+			color: #e00;
+		}
+		@media print {
+			* {
+				color: #000 !important;
+				background: none !important;
+			}
+			pre {
+				font-size: 0.8em;
+				margin: 0 auto;
+				padding: 0;
+				border: none;
+				box-shadow: none;
+			}
+		}
+	</style>
+</head>
+
+<body>
+<pre>
+<i>XZDIFF</i>(1)                          XZ Utils                          <i>XZDIFF</i>(1)
+
+<b>TABLE OF CONTENTS</b>
+       <b><a href="#NAME">NAME</a></b>
+       <b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b><a href="#BUGS">BUGS</a></b>
+       <b><a href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+
+<a name="NAME"></a><b><a href="#NAME">NAME</a></b>
+       xzcmp, xzdiff, lzcmp, lzdiff - compare compressed files
+
+<a name="SYNOPSIS"></a><b><a href="#SYNOPSIS">SYNOPSIS</a></b>
+       <b>xzcmp</b> [<i>cmp_options</i>] <i>file1</i> [<i>file2</i>]
+       <b>xzdiff</b> [<i>diff_options</i>] <i>file1</i> [<i>file2</i>]
+       <b>lzcmp</b> [<i>cmp_options</i>] <i>file1</i> [<i>file2</i>]
+       <b>lzdiff</b> [<i>diff_options</i>] <i>file1</i> [<i>file2</i>]
+
+<a name="DESCRIPTION"></a><b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b>xzcmp</b>  and  <b>xzdiff</b>  invoke  <b>cmp</b>(1)  or <b>diff</b>(1) on files compressed with
+       <b>xz</b>(1), <b>lzma</b>(1), <b>gzip</b>(1), <b>bzip2</b>(1), <b>lzop</b>(1), or  <b>zstd</b>(1).   All  options
+       specified  are  passed directly to <b>cmp</b>(1) or <b>diff</b>(1).  If only one file
+       is specified, then the files compared are <i>file1</i> (which must have a suf-
+       fix of a supported compression format) and <i>file1</i> from  which  the  com-
+       pression  format suffix has been stripped.  If two files are specified,
+       then they are uncompressed if necessary and fed to <b>cmp</b>(1)  or  <b>diff</b>(1).
+       The exit status from <b>cmp</b>(1) or <b>diff</b>(1) is preserved unless a decompres-
+       sion error occurs; then exit status is 2.
+
+       The names <b>lzcmp</b> and <b>lzdiff</b> are provided for backward compatibility with
+       LZMA Utils.
+
+<a name="SEE_ALSO"></a><b><a href="#SEE_ALSO">SEE ALSO</a></b>
+       <b>cmp</b>(1), <b>diff</b>(1), <b>xz</b>(1), <b>gzip</b>(1), <b>bzip2</b>(1), <b>lzop</b>(1), <b>zstd</b>(1), <b>zdiff</b>(1)
+
+<a name="BUGS"></a><b><a href="#BUGS">BUGS</a></b>
+       Messages  from  the <b>cmp</b>(1) or <b>diff</b>(1) programs refer to temporary file-
+       names instead of those specified.
+
+<b><a name="KEYWORD_INDEX" href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+
+
+Tukaani                           2021-06-04                         <i>XZDIFF</i>(1)
+</pre>
+</body>
+</html>
