@@ -56,6 +56,7 @@ XZMORE(1)                          XZ Utils                          XZMORE(1)
        <b><a href="#NAME">NAME</a></b>
        <b><a href="#SYNOPSIS">SYNOPSIS</a></b>
        <b><a href="#DESCRIPTION">DESCRIPTION</a></b>
+       <b><a href="#ENVIRONMENT">ENVIRONMENT</a></b>
        <b><a href="#SEE_ALSO">SEE ALSO</a></b>
        <b><a href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
 
@@ -63,33 +64,34 @@ XZMORE(1)                          XZ Utils                          XZMORE(1)
        xzmore, lzmore - view xz or lzma compressed (text) files
 
 <a name="SYNOPSIS"></a><b><a href="#SYNOPSIS">SYNOPSIS</a></b>
-       <b>xzmore</b> [<i>file...</i>]
-       <b>lzmore</b> [<i>file...</i>]
+       <b>xzmore</b> [<i>file</i>...]
+       <b>lzmore</b> [<i>file</i>...]
 
 <a name="DESCRIPTION"></a><b><a href="#DESCRIPTION">DESCRIPTION</a></b>
-       <b>xzmore</b>  is  a  filter which allows examination of <b>xz</b>(1) or <b>lzma</b>(1) com-
-       pressed text files one screenful at a time on a soft-copy terminal.
+       <b>xzmore</b> displays text from compressed files to a terminal using <b>more</b>(1).
+       Files supported by <b>xz</b>(1) are decompressed; other files are  assumed  to
+       be  in  uncompressed form already.  If no <i>files</i> are given, <b>xzmore</b> reads
+       from standard input.  See the <b>more</b>(1) manual for the keyboard commands.
 
-       To use a pager other than the default <b>more,</b>  set  environment  variable
-       <b>PAGER</b>  to the name of the desired program.  The name <b>lzmore</b> is provided
-       for backward compatibility with LZMA Utils.
+       Note that scrolling backwards might not be possible  depending  on  the
+       implementation  of <b>more</b>(1).  This is because <b>xzmore</b> uses a pipe to pass
+       the decompressed data to <b>more</b>(1).  <b>xzless</b>(1) uses  <b>less</b>(1)  which  pro-
+       vides more advanced features.
 
-       <b>e</b> or <b>q</b> When the prompt --More--(Next file: <i>file</i>) is printed, this  com-
-              mand causes <b>xzmore</b> to exit.
+       The  command  <b>lzmore</b>  is  provided for backward compatibility with LZMA
+       Utils.
 
-       <b>s</b>      When  the prompt --More--(Next file: <i>file</i>) is printed, this com-
-              mand causes <b>xzmore</b> to skip the next file and continue.
-
-       For list of keyboard commands supported while actually viewing the con-
-       tent of a file, refer to manual of the pager you use, usually <b>more</b>(1).
+<a name="ENVIRONMENT"></a><b><a href="#ENVIRONMENT">ENVIRONMENT</a></b>
+<a name="PAGER"></a>       <b><a href="#PAGER">PAGER</a></b>  If <b><a href="#PAGER">PAGER</a></b> is set, its value is  used  as  the  pager  instead  of
+              <b>more</b>(1).
 
 <a name="SEE_ALSO"></a><b><a href="#SEE_ALSO">SEE ALSO</a></b>
        <b>more</b>(1), <b>xz</b>(1), <b>xzless</b>(1), <b>zmore</b>(1)
 
 <b><a name="KEYWORD_INDEX" href="#KEYWORD_INDEX">KEYWORD INDEX</a></b>
+       <b><a href="#PAGER">PAGER</a></b>
 
-
-Tukaani                           2013-06-30                         XZMORE(1)
+Tukaani                           2024-02-12                         XZMORE(1)
 </pre>
 </body>
 </html>
